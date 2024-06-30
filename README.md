@@ -56,3 +56,56 @@ For every specialization we re-run the fine-tune on conversation data generated 
 10.1. Analyze results and identify areas for further enhancement
 10.2. Repeat steps 6-9 as necessary to continually improve the model's performance
 
+# Repository Setup Instructions
+
+## Backend Setup
+
+1. **Navigate to the backend directory:**
+    ```bash
+    cd backend
+    ```
+2. **Create a virtual environment:**
+    ```bash
+    virtualenv venv
+    ```
+3. **Activate the virtual environment:**
+    ```bash
+    source venv/bin/activate
+    ```
+4. **Install the required packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+5. **Run the backend application:**
+    ```bash
+    python3 mainapi.py
+    ```
+
+## Frontend Setup
+
+1. **Navigate to the frontend directory:**
+    ```bash
+    cd frontend
+    ```
+2. **Install the required packages:**
+    ```bash
+    npm i
+    ```
+3. **Start the frontend development server:**
+    ```bash
+    npm run dev
+    ```
+
+## Additional Notes
+
+- Ensure you have `virtualenv` installed for setting up the Python virtual environment. If not, you can install it using:
+    ```bash
+    pip install virtualenv
+    ```
+
+- Make sure you have `npm` installed for managing the frontend dependencies. You can download and install Node.js (which includes `npm`) from the [official Node.js website](https://nodejs.org/).
+
+- Always activate your virtual environment before running the backend server to ensure all dependencies are correctly loaded.
+
+- For production deployment, consider using tools like `gunicorn` for the backend and `nginx` to serve the frontend and handle requests.
+
