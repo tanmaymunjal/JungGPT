@@ -14,7 +14,7 @@ def fill_survey_option(chatbot: MistralModel, survey_ques: str) -> dict:
     ]
 
     response = chatbot.get_completion(messages)
-    return json.loads(response)
+    return json.loads(str(response))
 
 
 def generate_model_npi40_score(
@@ -36,7 +36,7 @@ def generate_model_npi40_score(
 
 if __name__ == "__main__":
     api_key = config.get("Mistral", "API_KEY")
-    model_id = "ft:open-mistral-7b:bf1a70be:20240630:9fbc9c74"
+    model_id = "open-mistral-7b"
     mistral_model = MistralModel(api_key, model_id)
     survey = NPI40Survey()
     print(generate_model_npi40_score(mistral_model, survey))

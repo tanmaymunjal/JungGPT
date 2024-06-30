@@ -20,8 +20,8 @@ class Application:
         self.cors_origins = cors_origins
 
     def build_application(self):
-        self.app.middleware("http")(self.middleware)
-        self.app.middleware("https")(self.middleware)
+        # self.app.middleware("http")(self.middleware)
+        # self.app.middleware("https")(self.middleware)
         self.app.add_middleware(
             CORSMiddleware,
             allow_origins=self.cors_origins,
@@ -62,7 +62,7 @@ class Application:
             chat_instance.messages.append(new_message)
             chat_instance.save()
 
-            return {"response": response}
+            return {"message": response}
 
         @self.app.get("/npi_score")
         async def fetch_npi_score():
